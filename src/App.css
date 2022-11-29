@@ -11,6 +11,7 @@ body {
   display: flex;
   justify-content: center;
   margin-top: 50px;
+  row-gap: 70px;
 }
 
 .vh-center {
@@ -81,4 +82,75 @@ body {
 
 .disabled {
   pointer-events: none;
+}
+
+.black-fill {
+  background-color: black;
+}
+
+#rope {
+  height: 50px;
+  width: 3px;
+  position: relative;
+  left: 138px;
+  top: 50px;
+}
+
+#overhead {
+  height: 6px;
+  width: 140px;
+}
+
+#pole {
+  height: 250px;
+  width: 6px;
+}
+
+#hang-device {
+  position: relative;
+  left: 68px;
+}
+
+#floor {
+  height: 10px;
+  width: 350px;
+}
+
+#human-head {
+  position: relative;
+  height: 40px;
+  width: 40px;
+  border: 4px solid black;
+  border-radius: 50%;
+}
+
+#human-body {
+  position: relative;
+  height: 75px;
+  width: 4px;
+  left: 18px;
+}
+
+.human-limbs {
+  position: relative;
+  height: 35px;
+  width: 35px;
+  border-left: 4px solid black;
+  border-top: 4px solid black;
+  transform: rotate(45deg);
+  left: 2px;
+}
+
+#human-arms {
+  bottom: 55px;
+}
+
+#human-legs {
+  bottom: 32px;
+}
+
+#human {
+  position: relative;
+  bottom: 217px;
+  left: 188px;
 }
