@@ -3,6 +3,16 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+  margin: 0;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
 .vh-center {
   display: flex;
   justify-content: center;
@@ -52,7 +62,9 @@
 }
 
 #input-display {
-  row-gap: 40px;
+  row-gap: 60px;
+  min-width: 520px;
+  width: 40%;
 }
 
 .correct {
