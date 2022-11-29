@@ -7,7 +7,7 @@ type hangmanDisplay = {
 
 const HangmanDisplay = () => {
   return (
-    <div>
+    <div className="d-flex">
       <Stand />
       <Human />
     </div>
