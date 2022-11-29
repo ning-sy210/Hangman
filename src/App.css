@@ -8,10 +8,8 @@ body {
 }
 
 .App {
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
-  row-gap: 70px;
+  margin-top: 60px;
+  row-gap: 60px;
 }
 
 .vh-center {
@@ -24,6 +22,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.d-flex {
+  display: flex;
 }
 
 .char-input {
@@ -91,9 +93,6 @@ body {
 #rope {
   height: 50px;
   width: 3px;
-  position: relative;
-  left: 138px;
-  top: 50px;
 }
 
 #overhead {
@@ -107,6 +106,7 @@ body {
 }
 
 #hang-device {
+  display: flex;
   position: relative;
   left: 68px;
 }
@@ -117,7 +117,6 @@ body {
 }
 
 #human-head {
-  position: relative;
   height: 40px;
   width: 40px;
   border: 4px solid black;
@@ -151,6 +150,10 @@ body {
 
 #human {
   position: relative;
-  bottom: 217px;
-  left: 188px;
+  top: 47px;
+  right: 155px;
+}
+
+#hangman-display {
+  height: fit-content;
 }
