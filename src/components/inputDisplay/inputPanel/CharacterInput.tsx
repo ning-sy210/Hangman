@@ -1,0 +1,32 @@
+import { useState } from "react";
+
+type charInput = {
+  letter: string;
+  containsLetter: () => boolean;
+};
+
+const CharacterInput = ({ letter, containsLetter }: charInput) => {
+  const [statusClassName, setStatusClassName] = useState("");
+
+  const onClick = () => {
+    let className = " disabled";
+
+    if (containsLetter()) {
+      className = "correct" + className;
+    } else {
+      className = "incorrect" + className;
+    }
+    setStatusClassName(className);
+  };
+
+  return (
+    <button
+      className={`char-input vh-center ${statusClassName}`}
+      onClick={onClick}
+    >
+      <span>{letter}</span>
+    </button>
+  );
+};
+
+export default CharacterInput;
