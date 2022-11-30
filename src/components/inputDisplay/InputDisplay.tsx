@@ -4,30 +4,11 @@ import WordDisplay from "./wordDisplay/WordDisplay";
 
 type inputDisplay = {
   word: string;
+  solveState: boolean[];
+  containsLetter: (letter: string) => boolean;
 };
 
-const InputDisplay = ({ word }: inputDisplay) => {
-  const [solveState, setSolveState] = useState(
-    new Array(word.length).fill(false)
-  );
-
-  const containsLetter = (letter: string) => {
-    if (!word.includes(letter)) {
-      return false;
-    }
-
-    const newSolveState = [...solveState];
-
-    Array.from(word).forEach((c, i) => {
-      if (c === letter) {
-        newSolveState[i] = true;
-      }
-    });
-
-    setSolveState(newSolveState);
-    return true;
-  };
-
+const InputDisplay = ({ word, solveState, containsLetter }: inputDisplay) => {
   return (
     <div id="input-display" className="stack-h-center">
       <WordDisplay word={word} guessState={solveState} />
