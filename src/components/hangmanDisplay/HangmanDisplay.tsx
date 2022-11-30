@@ -2,15 +2,15 @@ import Human from "./Human";
 import HangDevice from "./HangDevice";
 
 type hangmanDisplay = {
-  word: string;
+  wrongGuesses: number;
 };
 
-const HangmanDisplay = () => {
+const HangmanDisplay = ({ wrongGuesses }: hangmanDisplay) => {
   return (
     <div>
       <div className="d-flex">
         <HangDevice />
-        <Human />
+        <Human wrongGuesses={wrongGuesses} />
       </div>
       <div id="floor" className="black-fill"></div>
     </div>

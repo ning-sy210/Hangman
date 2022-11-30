@@ -11,9 +11,11 @@ function App() {
   const [solveState, setSolveState] = useState(
     new Array(word.length).fill(false)
   );
+  const [wrongGuesses, setWrongGuesses] = useState(0);
 
   const containsLetter = (letter: string) => {
     if (!word.includes(letter)) {
+      setWrongGuesses((prev) => prev + 1);
       return false;
     }
 
@@ -31,7 +33,7 @@ function App() {
 
   return (
     <div className="App stack-h-center">
-      <HangmanDisplay />
+      <HangmanDisplay wrongGuesses={wrongGuesses} />
       <InputDisplay
         word={word}
         solveState={solveState}
