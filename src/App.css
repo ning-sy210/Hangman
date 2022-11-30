@@ -94,6 +94,8 @@ body {
 #rope {
   height: 50px;
   width: 3px;
+  position: relative;
+  left: 19px;
 }
 
 #overhead {
@@ -151,8 +153,7 @@ body {
 
 #human {
   position: relative;
-  top: 47px;
-  right: 155px;
+  left: 47px;
 }
 
 #hangman-display {
