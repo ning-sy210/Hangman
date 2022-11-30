@@ -1,11 +1,13 @@
-import RandomWord from "random-words";
 import { useState } from "react";
 import InputPanel from "./inputPanel/InputPanel";
 import WordDisplay from "./wordDisplay/WordDisplay";
 
-const InputDisplay = () => {
-  const [word, setWord] = useState(RandomWord(1)[0].toUpperCase());
-  const [guessTracker, setGuessTracker] = useState(
+type inputDisplay = {
+  word: string;
+};
+
+const InputDisplay = ({ word }: inputDisplay) => {
+  const [solveState, setSolveState] = useState(
     new Array(word.length).fill(false)
   );
 
@@ -14,21 +16,21 @@ const InputDisplay = () => {
       return false;
     }
 
-    const newGuessState = [...guessTracker];
+    const newSolveState = [...solveState];
 
     Array.from(word).forEach((c, i) => {
       if (c === letter) {
-        newGuessState[i] = true;
+        newSolveState[i] = true;
       }
     });
 
-    setGuessTracker(newGuessState);
+    setSolveState(newSolveState);
     return true;
   };
 
   return (
     <div id="input-display" className="stack-h-center">
-      <WordDisplay word={word} guessState={guessTracker} />
+      <WordDisplay word={word} guessState={solveState} />
       <InputPanel containsLetter={containsLetter} />
     </div>
   );
