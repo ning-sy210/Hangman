@@ -159,3 +159,7 @@ body {
 #hangman-display {
   height: fit-content;
 }
+
+.hidden {
+  visibility: hidden;
+}
