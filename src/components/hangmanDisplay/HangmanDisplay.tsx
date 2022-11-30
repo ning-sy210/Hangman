@@ -1,5 +1,5 @@
 import Human from "./Human";
-import HangDevice from "./stand/HangDevice";
+import HangDevice from "./HangDevice";
 
 type hangmanDisplay = {
   word: string;
