@@ -1,5 +1,5 @@
 import Human from "./Human";
-import Stand from "./stand/Stand";
+import HangDevice from "./stand/HangDevice";
 
 type hangmanDisplay = {
   word: string;
@@ -7,9 +7,12 @@ type hangmanDisplay = {
 
 const HangmanDisplay = () => {
   return (
-    <div className="d-flex">
-      <Stand />
-      <Human />
+    <div>
+      <div className="d-flex">
+        <HangDevice />
+        <Human />
+      </div>
+      <div id="floor" className="black-fill"></div>
     </div>
   );
 };
