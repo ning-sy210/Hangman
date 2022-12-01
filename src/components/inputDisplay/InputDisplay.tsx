@@ -11,7 +11,7 @@ const InputDisplay = ({ word, solveState, containsLetter }: inputDisplay) => {
   return (
     <div id="input-display" className="stack-h-center">
       <WordDisplay word={word} solveState={solveState} />
-      <InputPanel containsLetter={containsLetter} />
+      <InputPanel word={word} containsLetter={containsLetter} />
     </div>
   );
 };

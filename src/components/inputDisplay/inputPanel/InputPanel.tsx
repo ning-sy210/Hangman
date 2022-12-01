@@ -1,10 +1,11 @@
 import CharacterInput from "./CharacterInput";
 
 type inputPanel = {
+  word: string;
   containsLetter: (letter: string) => boolean;
 };
 
-const InputPanel = ({ containsLetter }: inputPanel) => {
+const InputPanel = ({ word, containsLetter }: inputPanel) => {
   const alphabet = Array.from(Array(26)).map((e, i) =>
     String.fromCharCode(i + 65)
   );
@@ -14,6 +15,7 @@ const InputPanel = ({ containsLetter }: inputPanel) => {
       {alphabet.map((letter) => (
         <CharacterInput
           key={`${letter}-char-input`}
+          word={word}
           letter={letter}
           containsLetter={() => containsLetter(letter)}
         />

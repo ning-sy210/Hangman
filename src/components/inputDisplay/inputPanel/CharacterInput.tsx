@@ -1,12 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type charInput = {
+  word: string;
   letter: string;
   containsLetter: () => boolean;
 };
 
-const CharacterInput = ({ letter, containsLetter }: charInput) => {
+const CharacterInput = ({ word, letter, containsLetter }: charInput) => {
   const [statusClassName, setStatusClassName] = useState("");
+
+  useEffect(() => {
+    setStatusClassName("");
+  }, [word]);
 
   const onClick = () => {
     let className = " disabled";
