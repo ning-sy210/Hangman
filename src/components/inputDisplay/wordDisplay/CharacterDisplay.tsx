@@ -4,11 +4,7 @@ type charDisplay = {
 };
 
 const CharacterDisplay = ({ letter, show }: charDisplay) => {
-  return (
-    <div className={`vh-center char-display`}>
-      <span>{show && letter}</span>
-    </div>
-  );
+  return <div className={`vh-center char-display`}>{show && letter}</div>;
 };
 
 export default CharacterDisplay;
