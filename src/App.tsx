@@ -15,7 +15,10 @@ function App() {
   const [showPlayAgain, setShowPlayAgain] = useState(false);
 
   useEffect(() => {
-    if (wrongGuesses !== 5 && solveState.filter((x) => x).length !== 5) {
+    if (
+      wrongGuesses !== 5 &&
+      solveState.filter((x) => x).length !== word.length
+    ) {
       return;
     }
 
