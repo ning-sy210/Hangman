@@ -1,4 +1,3 @@
-import { useState } from "react";
 import InputPanel from "./inputPanel/InputPanel";
 import WordDisplay from "./wordDisplay/WordDisplay";
 
@@ -11,7 +10,7 @@ type inputDisplay = {
 const InputDisplay = ({ word, solveState, containsLetter }: inputDisplay) => {
   return (
     <div id="input-display" className="stack-h-center">
-      <WordDisplay word={word} guessState={solveState} />
+      <WordDisplay word={word} solveState={solveState} />
       <InputPanel containsLetter={containsLetter} />
     </div>
   );

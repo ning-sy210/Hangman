@@ -2,17 +2,17 @@ import CharacterDisplay from "./CharacterDisplay";
 
 type wordDisplay = {
   word: string;
-  guessState: boolean[];
+  solveState: boolean[];
 };
 
-const WordDisplay = ({ word, guessState }: wordDisplay) => {
+const WordDisplay = ({ word, solveState }: wordDisplay) => {
   return (
     <div id="word-display">
       {Array.from(word).map((letter, i) => (
         <CharacterDisplay
           key={`word-letter-${i + 1}`}
           letter={letter}
-          show={guessState[i]}
+          show={solveState[i]}
         />
       ))}
     </div>
