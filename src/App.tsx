@@ -40,13 +40,25 @@ function App() {
     return true;
   };
 
+  const resetGame = () => {
+    setWord(RandomWord(1)[0].toUpperCase());
+    setSolveState(new Array(word.length).fill(false));
+    setWrongGuesses(0);
+    setShowPlayAgain(false);
+  };
+
   const renderPlayAgainButton = () => {
     if (!showPlayAgain) {
       return null;
     }
 
     return (
-      <button id="play-again-btn" className="btn">
+      <button
+        id="play-again-btn"
+        className="btn"
+        onClick={resetGame}
+        title="Play Again"
+      >
         Play Again
       </button>
     );
