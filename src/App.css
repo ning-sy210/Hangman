@@ -156,10 +156,6 @@ body {
   left: 47px;
 }
 
-#hangman-display {
-  height: fit-content;
-}
-
 .hidden {
   visibility: hidden;
 }
