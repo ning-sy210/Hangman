@@ -23,8 +23,9 @@ const CharacterInput = ({ letter, containsLetter }: charInput) => {
     <button
       className={`char-input vh-center ${statusClassName}`}
       onClick={onClick}
+      title={letter}
     >
-      <span>{letter}</span>
+      {letter}
     </button>
   );
 };
