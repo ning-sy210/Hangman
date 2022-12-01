@@ -1,5 +1,5 @@
 import RandomWord from "random-words";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import HangmanDisplay from "./components/hangmanDisplay/HangmanDisplay";
 import InputDisplay from "./components/inputDisplay/InputDisplay";
@@ -12,6 +12,15 @@ function App() {
     new Array(word.length).fill(false)
   );
   const [wrongGuesses, setWrongGuesses] = useState(0);
+  const [showPlayAgain, setShowPlayAgain] = useState(false);
+
+  useEffect(() => {
+    if (wrongGuesses !== 5) {
+      return;
+    }
+
+    setShowPlayAgain(true);
+  }, [wrongGuesses]);
 
   const containsLetter = (letter: string) => {
     if (!word.includes(letter)) {
@@ -31,9 +40,22 @@ function App() {
     return true;
   };
 
+  const renderPlayAgainButton = () => {
+    if (!showPlayAgain) {
+      return null;
+    }
+
+    return (
+      <button id="play-again-btn" className="btn">
+        Play Again
+      </button>
+    );
+  };
+
   return (
     <div className="App stack-h-center">
       <HangmanDisplay wrongGuesses={wrongGuesses} />
+      {renderPlayAgainButton()}
       <InputDisplay
         word={word}
         solveState={solveState}
