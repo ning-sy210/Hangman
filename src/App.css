@@ -78,13 +78,18 @@ body {
 }
 
 .incorrect {
-  border-color: rgb(215 215 215);
-  color: rgb(215 215 215);
+  border-color: rgb(255 52 52 / 40%);
+  color: rgb(255 52 52 / 40%);
   cursor: default;
 }
 
 .disabled {
   pointer-events: none;
+}
+
+.gray-text {
+  border-color: rgb(215 215 215);
+  color: rgb(215 215 215);
 }
 
 .black-fill {
@@ -177,4 +182,14 @@ body {
 
 #play-again-btn:hover {
   background-color: #87ff87;
+}
+
+.failed-display {
+  color: red;
+  border-color: red;
+}
+
+.solved-display {
+  color: rgb(0, 212, 0);
+  border-color: rgb(0, 212, 0);
 }
