@@ -37,7 +37,7 @@ body {
   font-size: 1.1rem;
   font-weight: bold;
   cursor: pointer;
-  transition: ease-in-out;
+  transition: ease-out;
   transition-duration: 0.2s;
 }
 
