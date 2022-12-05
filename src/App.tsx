@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import HangmanDisplay from "./components/hangmanDisplay/HangmanDisplay";
 import InputDisplay from "./components/inputDisplay/InputDisplay";
 
+import { GameState, GameStateContext } from "./contexts/GameStateContext";
+
 import "./App.css";
 
 function App() {
@@ -67,15 +69,28 @@ function App() {
     );
   };
 
+  const getGameStateContextValue = () => {
+    if (wrongGuesses === 5) {
+      return GameState.FAILED;
+    } else if (solveState.filter((x) => x).length === word.length) {
+      return GameState.SOLVED;
+    }
+
+    return GameState.ACTIVE;
+  };
+
   return (
     <div className="App stack-h-center">
       <HangmanDisplay wrongGuesses={wrongGuesses} />
       {renderPlayAgainButton()}
-      <InputDisplay
-        word={word}
-        solveState={solveState}
-        containsLetter={containsLetter}
-      />
+
+      <GameStateContext.Provider value={getGameStateContextValue()}>
+        <InputDisplay
+          word={word}
+          solveState={solveState}
+          containsLetter={containsLetter}
+        />
+      </GameStateContext.Provider>
     </div>
   );
 }
