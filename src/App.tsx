@@ -1,5 +1,6 @@
 import RandomWord from "random-words";
 import { useEffect, useState } from "react";
+import ReactConfetti from "react-confetti";
 
 import HangmanDisplay from "./components/hangmanDisplay/HangmanDisplay";
 import InputDisplay from "./components/inputDisplay/InputDisplay";
@@ -79,6 +80,16 @@ function App() {
     return GameState.ACTIVE;
   };
 
+  const renderConfetti = () => {
+    if (getGameStateContextValue() !== GameState.SOLVED) {
+      return null;
+    }
+
+    return (
+      <ReactConfetti width={window.innerWidth} height={window.innerHeight} />
+    );
+  };
+
   return (
     <div className="App stack-h-center">
       <HangmanDisplay wrongGuesses={wrongGuesses} />
@@ -91,6 +102,7 @@ function App() {
           containsLetter={containsLetter}
         />
       </GameStateContext.Provider>
+      {renderConfetti()}
     </div>
   );
 }
