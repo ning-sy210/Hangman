@@ -12,7 +12,7 @@ import "./App.css";
 function App() {
   const [word, setWord] = useState(RandomWord(1)[0].toUpperCase());
   const [solveState, setSolveState] = useState(
-    new Array(word.length).fill(false)
+    Array.from(Array(word.length)).map((x) => false)
   );
   const [wrongGuesses, setWrongGuesses] = useState(0);
   const [showPlayAgain, setShowPlayAgain] = useState(false);
