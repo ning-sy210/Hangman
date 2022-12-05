@@ -86,7 +86,12 @@ function App() {
     }
 
     return (
-      <ReactConfetti width={window.innerWidth} height={window.innerHeight} />
+      <ReactConfetti
+        width={window.innerWidth}
+        height={window.innerHeight}
+        numberOfPieces={1000}
+        recycle={false}
+      />
     );
   };
 
