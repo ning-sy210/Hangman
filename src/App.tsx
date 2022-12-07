@@ -47,8 +47,9 @@ function App() {
   };
 
   const resetGame = () => {
-    setWord(RandomWord(1)[0].toUpperCase());
-    setSolveState(new Array(word.length).fill(false));
+    const newWord = RandomWord(1)[0].toUpperCase();
+    setWord(newWord);
+    setSolveState(new Array(newWord.length).fill(false));
     setWrongGuesses(0);
     setShowPlayAgain(false);
   };
