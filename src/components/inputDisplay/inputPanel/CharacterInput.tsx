@@ -23,7 +23,6 @@ const CharacterInput = ({ word, letter, containsLetter }: charInput) => {
   }
 
   const onClick = () => {
-    console.log(letter);
     let className = " disabled";
 
     if (containsLetter()) {
