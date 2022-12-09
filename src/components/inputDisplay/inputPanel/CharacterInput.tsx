@@ -18,15 +18,12 @@ const CharacterInput = ({ word, letter, containsLetter }: charInput) => {
     setStatusClassName("");
   }, [word]);
 
-  useEffect(() => {
-    if (statusClassName || gameState === GameState.ACTIVE) {
-      return;
-    }
-
+  if (!statusClassName && gameState !== GameState.ACTIVE) {
     setStatusClassName("gray-text disabled");
-  }, [gameState]);
+  }
 
   const onClick = () => {
+    console.log(letter);
     let className = " disabled";
 
     if (containsLetter()) {
